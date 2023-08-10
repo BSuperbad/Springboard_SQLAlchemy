@@ -1,11 +1,17 @@
 {% extends 'users/base.html' %}
 {% block title %}Add New User{% endblock %}
 {% block content %}
-<h1>Add New User</h1>
+<h1>Create a User</h1>
 <form action="/users/new" method="POST">
-    <p>First Name: <input type="text" name="first_name" placeholder="Enter a first name"></p>
-    <p>Last Name: <input type="text" name="last_name" placeholder="Enter a last name"></p>
-    <p>Image URL: <input type="url" name="image_url" placeholder="Provide an image of this user"></p>
-    <button>Add</button>
+    <p>First Name: <input type="text" class="form-control" name="first_name" placeholder="Enter a first name" required>
+    </p>
+    <p>Last Name: <input type="text" class="form-control" name="last_name" placeholder="Enter a last name" required></p>
+    <p>Profile Picture: <input type="url" class="form-control" name="image_url"
+            placeholder="Provide a link for a Profile Picture">
+    </p>
+    <div class="form-group text-right">
+        <button class="btn btn-success">Add</button>
+        <a href="/users" class="btn btn-outline-info">Back</a>
+    </div>
 </form>
 {% endblock %}

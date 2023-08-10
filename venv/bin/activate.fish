@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/Brianne.Wilhelmi/SpringBoard/28. SQLAlchemy/flask-blogly/venv"
+set -gx VIRTUAL_ENV "/Users/Brianne.Wilhelmi/SpringBoard/28. SQLAlchemy/flask-blogly_part_2/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
