@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/Brianne.Wilhelmi/SpringBoard/28. SQLAlchemy/flask-blogly_part_2/venv"
+VIRTUAL_ENV="/Users/Brianne.Wilhelmi/SpringBoard/28. SQLAlchemy/flask-blogly_part_3/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

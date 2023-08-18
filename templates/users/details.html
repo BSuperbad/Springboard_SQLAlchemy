@@ -17,7 +17,7 @@
         <h2>Posts</h2>
         <ul>
             {% for post in user.posts%}
-            <li><a href="/users/{{user.id}}/posts/{{post.id}}">{{post.title}}</a>
+            <li><a href="/posts/{{post.id}}">{{post.title}}</a>
                 <small>{{ post.created_at }}</small>
             </li>
             {% endfor %}

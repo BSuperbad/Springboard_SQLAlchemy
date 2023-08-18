@@ -29,6 +29,8 @@ class User(db.Model):
                           nullable=False)
     image_url = db.Column(db.String, nullable=False, default=default_image_url)
 
+    posts = db.relationship("Post", backref="user")
+
     @property
     def full_name(self):
         """Return full name of user."""
@@ -53,4 +55,31 @@ class Post(db.Model):
         db.DateTime, nullable=False, default=datetime.utcnow)
     user_code = db.Column(db.Integer, db.ForeignKey('users.id'))
 
-    user = db.relationship('User', backref='posts')
+    author = db.relationship('User', backref='post')
+
+
+class Tag(db.Model):
+    """Actual tag"""
+
+    __tablename__ = "tags"
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.Text, unique=True, nullable="False")
+
+    posts = db.relationship(
+        'Post',
+        secondary="post_tags",
+        backref="tags",
+    )
+
+
+class PostTag(db.Model):
+    """Tagging feature for posts"""
+
+    __tablename__ = "post_tags"
+
+    post_id = db.Column(db.Integer, db.ForeignKey(
+        'posts.id'), primary_key=True)
+
+    tag_id = db.Column(db.Integer, db.ForeignKey(
+        'tags.id'), primary_key=True)

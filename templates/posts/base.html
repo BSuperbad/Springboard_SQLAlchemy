@@ -11,6 +11,18 @@
 {% block content %}
 
 <body>
+    <nav class="navbar navbar-light bg-light">
+        {% block navbar %}
+        <form class="form-inline">
+            <a class="btn btn-outline-success" href="/">Recent Posts</a>
+            <a class="btn btn-outline-success" href="/users">Users</a>
+            <a class="btn btn-outline-success" href="/tags">Tags</a>
+        </form>
+        {% endblock %}
+    </nav>
+
+
+
 </body>
 {% endblock %}
 
